@@ -1,4 +1,5 @@
 import 'package:cruise_buddy/UI/Screens/home_screen.dart';
+import 'package:cruise_buddy/core/constants/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:cruise_buddy/UI/Widgets/wave_clipper/first_wave_clipper.dart';
@@ -34,14 +35,14 @@ class _SplashScreenState extends State<SplashScreen>
       }
     });
 
-    Future.delayed(const Duration(milliseconds: 2600), () {
-      if (mounted) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
-        );
-      }
-    });
+    // Future.delayed(const Duration(milliseconds: 2600), () {
+    //   if (mounted) {
+    //     Navigator.push(
+    //       context,
+    //       MaterialPageRoute(builder: (context) => const HomeScreen()),
+    //     );
+    //   }
+    // });
   }
 
   @override
@@ -66,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
                 // Background color
                 Positioned.fill(
                   child: Container(
-                    color: Colors.white,
+                    color: ColorConstants.whiteFF,
                   ),
                 ),
 
@@ -76,7 +77,7 @@ class _SplashScreenState extends State<SplashScreen>
                     clipper: FourthWaveClipper(_controller.value,
                         waveHeight: 25, phaseShift: pi / 2),
                     child: Container(
-                      color: const Color(0XFF98D0D5),
+                      color: ColorConstants.lightblueD5,
                     ),
                   ),
                 ),
@@ -86,7 +87,7 @@ class _SplashScreenState extends State<SplashScreen>
                     clipper: ThirdWaveClipper(_controller.value,
                         waveHeight: 25, phaseShift: pi / 1),
                     child: Container(
-                      color: const Color(0XFFB4D6DB),
+                      color: ColorConstants.lightblueDB,
                     ),
                   ),
                 ),
@@ -97,7 +98,7 @@ class _SplashScreenState extends State<SplashScreen>
                     clipper: SecondWaveClipper(_controller.value,
                         waveHeight: 25, phaseShift: pi / 2),
                     child: Container(
-                      color: const Color(0XFF7ACACE),
+                      color: ColorConstants.lightblueCE,
                     ),
                   ),
                 ),
@@ -106,7 +107,9 @@ class _SplashScreenState extends State<SplashScreen>
                   child: ClipPath(
                     clipper: FirstWaveClipper(_controller.value,
                         waveHeight: 25, phaseShift: pi / 1),
-                    child: Container(color: const Color(0XFF1F8386)),
+                    child: Container(
+                      color: ColorConstants.darkblue86,
+                    ),
                   ),
                 ),
 
